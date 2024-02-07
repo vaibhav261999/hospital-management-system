@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     {% if admin %}
+    <h1> Admin LogIn page </h1>
+
+        <form action="{% url 'Login' pk='admin' %}" method="post">
+            {% csrf_token %}
+            Enter E-mail
+            <input type="text" name="email" required><br><br>
+            Enter Password
+           
+            <input type="text" name="password" required>
+            <br><br>
+            <input type="submit">
+
+        </form>
+        {{msg}}
+
+    {% elif dr %}
+
+        <h1> Doctor LogIn page </h1>
+        <form action="{% url 'Login' pk='dr' %}" method="post">
+            {% csrf_token %}
+
+            Enter E-mail
+            <input type="text" name="email" required><br><br>
+            Enter Password
+           
+            <input type="text" name="password" required>
+            <br><br>
+            <input type="submit">
+
+        </form>
+
+    {% else %}  
+
+        <h1> Patient LogIn page </h1>
+            <form action="{% url 'Login' pk='patient' %}" method="post">
+            {% csrf_token %}
+
+                Enter E-mail
+                <input type="text" name="email" required><br><br>
+                Enter Password
+            
+                <input type="text" name="password" required>
+                <br><br>
+                <input type="submit">
+
+            </form> 
+            
+            
+    {% endif %}
+
+    
+</body>
+</html>

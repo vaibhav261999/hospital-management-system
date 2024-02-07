@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Admin</h1>
+        {{Amsg}}
+            <br><br>
+            <a href="{% url 'RegisterForm' pk='admin' %}">Register</a><br>
+                <br>
+            <a href="{% url 'loginForm' pk='admin' %}">Login</a>
+
+    <h1>Doctor</h1>
+        {{Dmsg}}
+            <br><br>
+            <a href="{% url 'RegisterForm' pk='dr' %}">Register</a><br>
+                <br>
+            <a href="{% url 'loginForm' pk='dr' %}">Login</a>
+
+    <h1>Patient</h1>
+        {{Pmsg}}
+            <br><br>
+            <a href="{% url 'RegisterForm' pk='Patient' %}">Register</a><br>
+                <br>
+            <a href="{% url 'loginForm' pk='Patient' %}">Login</a>
+</body>
+</html>

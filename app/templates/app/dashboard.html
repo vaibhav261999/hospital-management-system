@@ -1,0 +1,11 @@
+    <h1>{{msg}}</h1>
+    <h3> First Name: {{Data.fname}}   </h3>
+    <h3> Last Name:  {{Data.lname}}   </h3>
+{% if Data.user %}
+    <h3> User Name:  {{Data.user}}    </h3>
+{% else %}
+    <h3> Symptoms:   {{Data.symptoms}}</h3>
+{% endif %}
+    <h3> Contact:    {{Data.contact}} </h3>
+    <h3> Email:      {{Data.email}}   </h3>
+    <h3> Password:   {{Data.password}}</h3>
