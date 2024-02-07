@@ -1,2 +1,140 @@
-<h1>hahhhf</h1>
-<h1>ankit</h1>
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    
+    <script src="https://kit.fontawesome.com/f5b6191954.js" crossorigin="anonymous"></script><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    
+</head>
+<body>
+
+  <nav>
+    <h3  class="text-primary fw-bold fs-2"> <i class="fa-solid fa-stethoscope"></i>&nbsp;</i>MEDI<span class="text-success">CARE</span></h3>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#gallary">Gallary</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+      <li><a href="#login">Login</a></li>
+    </ul>
+    <a href="#"><button>Book an Appointment</button></a>
+  </nav>
+  {% comment %} <main>
+
+  
+    {% block hero %}{% endblock hero %}
+    {% block content %}{% endblock content %}
+  </main> {% endcomment %}
+
+  <video  controls class="homevideo1" width="100%" height="50%">
+    <source src="{% static "image/video1.mp4" %}" type="video/mp4">
+  </video>
+
+    <section class="services" id="services">
+        <div class="text-center p-3 pt-4" > 
+          <h3>Our Key Feature</h3>
+          <p>Take a look at some of our key feature</p>
+        </div>
+        <div class="serviceFeature">
+          <div><i class="fa-solid fa-heart-pulse"></i>
+            <h6><a href="#">Cardiology</a></h6></div>
+          <div>
+            <i class="fa-solid fa-ribbon"></i>
+            <h6><a href="#">Orthopeadic</a></h6></div>
+          <div>
+            <i class="fa-solid fa-brain"></i>
+            <h6><a href="#">Nurologist</a></h6></div>
+          <div>
+            <i class="fa-solid fa-tablets"></i>
+            <h6><a href="#">Pharma Pipeline</a></h6></div>
+          <div>
+            <i class="fa-solid fa-prescription-bottle-medical"></i>
+            <h6><a href="#">Pharma Team</a> </h6></div>
+      </section>
+
+
+      <div class="about" id="about">
+        <div>
+         <img src="{% static "image/about-us.jpg" %}" alt="">
+        </div>
+        <div>
+         <h3>About the Hospital</h3>
+         <p>A hospital is a healthcare institution providing patient treatment with specialized health science and auxiliary healthcare staff and medical equipment.[1] The best-known type of hospital is the general hospital, which typically has an emergency department to treat urgent health problems ranging from fire and accident victims to a sudden illness. A district hospital typically is the major health care facility in its region, with many beds for intensive care and additional beds for patients who need long-term care. Specialized hospitals include trauma centers, rehabilitation hospitals, children's hospitals, seniors' (geriatric) hospitals, and hospitals for dealing with specific medical needs such as psychiatric treatment (see psychiatric hospital) and certain disease categories. Specialized hospitals can help reduce health care costs compared to general hospitals.[2] Hospitals are classified as general, specialty, or government depending on the sources of income received.</p>
+        </div>
+       </div>
+      
+
+       <section class="exportDoctor">
+        <h2 class="text-center p-3">Expert Doctor</h2>
+        <div class="exportDoctor-swiper">
+          <div class="swiper-wrapper d-flex " id="owl-demo">
+            
+              <div class="swiper-slide swiper-slide-active" role="group" aria-label="NaN / 5" data-swiper-slide-index="0" style="width: 333.333px;">
+                <div class="card" style="width: 18rem;">
+                  <img class="card-img-top" src="{% static "image/img1.png" %}" alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title text-center">Prashant Sir</h5>
+                   
+                  </div>
+                </div>
+              </div>
+            
+              <div class="swiper-slide swiper-slide-next" role="group" aria-label="NaN / 5" data-swiper-slide-index="1" style="width: 333.333px;">
+                <div class="card" style="width: 18rem;">
+                  <img class="card-img-top" src="{% static "image/img2.png" %}" alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title text-center">sumit</h5>
+                   
+                  </div>
+                </div>
+              </div>
+            
+              <div class="swiper-slide" role="group" aria-label="NaN / 5" data-swiper-slide-index="2" style="width: 333.333px;">
+                <div class="card" style="width: 18rem;">
+                  <img class="card-img-top" src="{% static "image/img3.png" %}" alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title text-center">Ashish</h5>
+                   
+                  </div>
+                </div>
+              </div>
+                      
+            </div>
+            
+        </div>
+        </section>
+ 
+        <section class="gallary" id="gallary">
+             <div class="text-center p-3 pt-4" > 
+               <h3>Our Gallary</h3>
+               <p>View Gallary</p>
+             </div>
+             <div class="gallaryCategory">
+             
+             <button id="AllClickBtn">All</button>
+              <button id="DentalClickBtn">Dental</button>
+              <button id="CardiologyClickBtn">Cardiology</button>
+              <button id="NeurologyClickBtn">Neurology</button>
+              <button id="LaboratyClickBtn">Laboraty</button>
+               
+               {% comment %} <a class="shoeAllImg" href="{% url 'images' %}">Show All images</a> {% endcomment %}
+             </div>
+             <div class="gallaryImg" id="gallaryImg">
+               
+               
+             </div>
+           </section>
+
+
+ 
+
+
+ 
+
+</body>
+</html>
