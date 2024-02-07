@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {% if Admin_form %}
+        <h1>Admin Register Form</h1>
+        <form action="{% url 'Register' pk='admin' %}" method="post">
+        <center>
+            {% csrf_token %}
+            
+            {{Admin_form}}
+
+            <input type="submit" value="Register">
+        </center>
+    </form>
+
+    {% elif Dr_form %}
+
+        <h1>Doctor Register Form</h1>
+        <form action="{% url 'Register' pk='dr' %}" method="post">
+            <center>
+            {% csrf_token %}
+
+            {{Dr_form}}
+            <input type="submit" value="Register">
+            </center>
+        </form>
+
+        
+    {% else %}
+        <h1>Patient Register Form</h1>
+            <form action="{% url 'Register' pk='patient' %}" method="post">
+                <center>
+                {% csrf_token %}
+
+                {{patient_form}}
+                <input type="submit" value="Register">
+                </center>
+            </form>
+    
+    {% endif %}
+</body>
+
+</html>
