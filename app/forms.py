@@ -18,5 +18,11 @@ class PatientForm(forms.ModelForm):
 
 
 
+class Book_AppointmentForm(forms.ModelForm):
+    class Meta:
+        model=Book_Appointment
+        fields='__all__'
+
+
 
         

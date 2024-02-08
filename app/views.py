@@ -231,3 +231,8 @@ def Login(request,pk):
 
 
 
+# -----------------------------------
+    
+def bookAppoi(request):
+    book_form=Book_AppointmentForm()
+    return render(request, "app/bookAppoi.html",{'book_form':book_form})

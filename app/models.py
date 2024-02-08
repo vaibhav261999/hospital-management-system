@@ -26,4 +26,14 @@ class Patient_Register(models.Model):
     Symptoms=models.CharField(max_length=50)
 
 
-    
+class Book_Appointment(models.Model):
+    firstName=models.CharField(max_length=20)
+    lastName=models.CharField(max_length=20)
+    dob=models.CharField(max_length=50)
+    general=models.CharField(max_length=50)
+    phone_number=models.CharField(max_length=20)    
+    address=models.CharField(max_length=20)    
+    email=models.EmailField()    
+    doctor_name=models.CharField(max_length=20)    
+
+
