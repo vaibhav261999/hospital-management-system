@@ -15,5 +15,6 @@ urlpatterns = [
     # ----------------------------
 
     path('bookAppoi/', bookAppoi, name='bookAppoi'),
+    # path('Appoinment/', Appoinment, name='Appoinment'),
 
 ]
