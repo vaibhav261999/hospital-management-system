@@ -18,8 +18,8 @@
       <li><a href="#home">Home</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#about">About Us</a></li>
-      <li><a href="#gallary">Gallary</a></li>
-      <li><a href="#contact">Contact Us</a></li>
+      {% comment %} <li><a href="#gallary">Gallary</a></li> {% endcomment %}
+      {% comment %} <li><a href="#contact">Contact Us</a></li> {% endcomment %}
       <li><a href="#doctor">Doctor</a></li>
 
       <li><a href="{% url 'SignUp' %}">Login</a></li>
@@ -108,7 +108,7 @@
         </div>
         </section>
  
-        <section class="gallary" id="gallary">
+        {% comment %} <section class="gallary" id="gallary">
              <div class="text-center p-3 pt-4" > 
                <h3>Our Gallary</h3>
                <p>View Gallary</p>
@@ -121,13 +121,12 @@
               <button id="NeurologyClickBtn">Neurology</button>
               <button id="LaboratyClickBtn">Laboraty</button>
                
-               {% comment %} <a class="shoeAllImg" href="{% url 'images' %}">Show All images</a> {% endcomment %}
              </div>
              <div class="gallaryImg" id="gallaryImg">
                
                
              </div>
-           </section>
+           </section> {% endcomment %}
 
 
  
