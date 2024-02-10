@@ -232,7 +232,6 @@ def Login(request,pk):
 # -----------------------------------
 def bookAppoi(request):
     book_form=Book_AppointmentForm()
-    msg="agya"
-    return render(request, "app/bookAppoi.html",{'book_form':book_form,"msg":msg})
+    return render(request, "app/bookAppoi.html",{'book_form':book_form})
 
 
