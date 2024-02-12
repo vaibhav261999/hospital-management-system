@@ -10,9 +10,9 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 0.7rem 1.4rem;
- 
-
   background-color: rgb(163, 242, 233);
+  position: sticky;
+  top: 0;
 }
 nav > ul {
   display: flex;
@@ -163,4 +163,3 @@ nav a {
   /* background-color: rgb(5, 158, 148); */
 }
 /* Gallary Section  End*/
-
