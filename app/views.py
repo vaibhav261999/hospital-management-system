@@ -118,6 +118,120 @@ def loginForm(request,pk):
     
   
 
+# def Login(request,pk):
+#     if request.method=="POST":
+#         if pk=="admin":
+#             email=request.POST['email']
+#             password=request.POST['password']
+
+#             valid=AdminRegister.objects.filter(Email=email)
+#             if valid:
+#                 data=AdminRegister.objects.get(Email=email)
+#                 if password==data.Password:
+
+#                     fname=data.firstName
+#                     lname=data.lastName
+#                     user=data.userName
+#                     contact=data.Contact
+#                     email=data.Email
+#                     password=data.Password
+
+#                     AdminData={
+#                         'fname':fname,
+#                         'lname':lname,
+#                         'user':user,
+#                         'contact':contact,
+#                         'email':email,
+#                         'password':password,
+#                     }
+#                     msg="Admin log-In Successfully"
+#                     cont=AdminRegister.objects.count()
+#                     return render(request,'app/dashboard.html',{'Data':AdminData,'msg':msg,'cont':cont})
+#                 else:
+#                     msg="Incorrect Password"
+#                     return render(request,'app/logIn.html',{"admin":pk,'msg':msg})
+
+#             else:
+#                 msg="Incorrect Email"
+#                 return render(request,'app/logIn.html',{"admin":pk,'msg':msg})
+# # --------------------------------
+#         elif pk=='dr':
+#             email=request.POST['email']
+#             password=request.POST['password']
+
+#             valid=Dr_Register.objects.filter(Email=email)
+#             if valid:
+#                 data=Dr_Register.objects.get(Email=email)
+#                 if password==data.Password:
+
+#                     fname=data.firstName
+#                     lname=data.lastName
+#                     user=data.userName
+#                     contact=data.Contact
+#                     email=data.Email
+#                     password=data.Password
+
+#                     Dr_Data={
+#                         'fname':fname,
+#                         'lname':lname,
+#                         'user':user,
+#                         'contact':contact,
+#                         'email':email,
+#                         'password':password,
+#                     }
+#                     msg=" Doctor log-In Successfully"
+#                     cont=Dr_Register.objects.count()
+
+#                     return render(request,'app/dashboard.html',{'Data':Dr_Data,'msg':msg,'cont':cont})
+#                 else:
+#                     msg="Incorrect Password"
+#                     return render(request,'app/logIn.html',{"dr":pk,'msg':msg})
+
+#             else:
+#                 msg="Incorrect Email"
+#                 return render(request,'app/logIn.html',{"dr":pk,'msg':msg})
+# #  --------------------------------
+#         else:
+#             email=request.POST['email']
+#             password=request.POST['password']
+
+#             valid=Patient_Register.objects.filter(Email=email)
+#             if valid:
+#                 data=Patient_Register.objects.get(Email=email)
+#                 if password==data.Password:
+
+#                     fname=data.firstName
+#                     lname=data.lastName
+#                     contact=data.Contact
+#                     email=data.Email
+#                     password=data.Password
+#                     symp=data.Symptoms
+
+#                     Patient_Data={
+#                         'fname':fname,
+#                         'lname':lname,
+#                         'contact':contact,
+#                         'email':email,
+#                         'password':password,
+#                         'symptoms':symp,
+#                     }
+#                     msg=" Patient log-In Successfully"
+#                     cont=Patient_Register.objects.count()
+#                     return render(request,'app/dashboard.html',{'Data':Patient_Data,'msg':msg,'cont':cont})
+#                 else:
+#                     msg="Incorrect Password"
+#                     return render(request,'app/logIn.html',{"dr":pk,'msg':msg})
+
+#             else:
+#                 msg="Incorrect Email"
+#                 return render(request,'app/logIn.html',{"patient":pk,'msg':msg})            
+
+
+
+#     else:
+#         msg="Request Method is not 'POST' "
+#         return render(request,'app/logIn.html',{'msg':msg})
+# ---------------------------------------------------------------------
 def Login(request,pk):
     if request.method=="POST":
         if pk=="admin":
@@ -136,6 +250,15 @@ def Login(request,pk):
                     email=data.Email
                     password=data.Password
 
+                    request.session['firstName']=fname
+                    request.session['lastName']=lname
+                    request.session['userName']=user
+                    request.session['Contact']=contact
+                    request.session['Email']=email
+                    request.session['Password']=password
+
+                    # request.session.modified= True 
+
                     AdminData={
                         'fname':fname,
                         'lname':lname,
@@ -145,7 +268,8 @@ def Login(request,pk):
                         'password':password,
                     }
                     msg="Admin log-In Successfully"
-                    return render(request,'app/dashboard.html',{'Data':AdminData,'msg':msg})
+                    cont=AdminRegister.objects.count()
+                    return render(request,'app/dashboard.html',{'Data':AdminData,'msg':msg,'cont':cont})
                 else:
                     msg="Incorrect Password"
                     return render(request,'app/logIn.html',{"admin":pk,'msg':msg})
@@ -153,7 +277,7 @@ def Login(request,pk):
             else:
                 msg="Incorrect Email"
                 return render(request,'app/logIn.html',{"admin":pk,'msg':msg})
-# --------------------------------
+    # --------------------------------
         elif pk=='dr':
             email=request.POST['email']
             password=request.POST['password']
@@ -170,6 +294,13 @@ def Login(request,pk):
                     email=data.Email
                     password=data.Password
 
+                    request.session['firstName']=fname
+                    request.session['lastName']=lname
+                    request.session['userName']=user
+                    request.session['Contact']=contact
+                    request.session['Email']=email
+                    request.session['Password']=password
+
                     Dr_Data={
                         'fname':fname,
                         'lname':lname,
@@ -179,7 +310,9 @@ def Login(request,pk):
                         'password':password,
                     }
                     msg=" Doctor log-In Successfully"
-                    return render(request,'app/dashboard.html',{'Data':Dr_Data,'msg':msg})
+                    cont=Dr_Register.objects.count()
+
+                    return render(request,'app/dashboard.html',{'Data':Dr_Data,'msg':msg,'cont':cont})
                 else:
                     msg="Incorrect Password"
                     return render(request,'app/logIn.html',{"dr":pk,'msg':msg})
@@ -187,7 +320,7 @@ def Login(request,pk):
             else:
                 msg="Incorrect Email"
                 return render(request,'app/logIn.html',{"dr":pk,'msg':msg})
-#  --------------------------------
+    #  --------------------------------
         else:
             email=request.POST['email']
             password=request.POST['password']
@@ -204,6 +337,12 @@ def Login(request,pk):
                     password=data.Password
                     symp=data.Symptoms
 
+                    request.session['firstName']=fname
+                    request.session['lastName']=lname
+                    request.session['Contact']=contact
+                    request.session['Email']=email
+                    request.session['Password']=password
+
                     Patient_Data={
                         'fname':fname,
                         'lname':lname,
@@ -213,7 +352,8 @@ def Login(request,pk):
                         'symptoms':symp,
                     }
                     msg=" Patient log-In Successfully"
-                    return render(request,'app/dashboard.html',{'Data':Patient_Data,'msg':msg})
+                    cont=Patient_Register.objects.count()
+                    return render(request,'app/dashboard.html',{'Data':Patient_Data,'msg':msg,'cont':cont})
                 else:
                     msg="Incorrect Password"
                     return render(request,'app/logIn.html',{"dr":pk,'msg':msg})
@@ -222,11 +362,17 @@ def Login(request,pk):
                 msg="Incorrect Email"
                 return render(request,'app/logIn.html',{"patient":pk,'msg':msg})            
 
-
-
     else:
         msg="Request Method is not 'POST' "
         return render(request,'app/logIn.html',{'msg':msg})
+
+def logout(request):
+    if "Email" in request.session:
+        request.session.flush()
+        return render(request ,'app/SignUp.html')
+
+
+
 
 
 # -----------------------------------

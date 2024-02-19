@@ -11,6 +11,8 @@ urlpatterns = [
     path('Register/<str:pk>', Register, name='Register'),
     path('loginForm/<str:pk>', loginForm, name='loginForm'),
     path('Login/<str:pk>', Login, name='Login'),
+    
+    path('logout/', logout, name='logout'),
 
     # ----------------------------
 
